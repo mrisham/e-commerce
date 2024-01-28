@@ -1,0 +1,11 @@
+.shopcategory-banner {
+  margin: 30px auto;
+  display: block;
+  width: 82%;
+}
+.shopcaterogy-indexsort {
+  display: flex;
+  margin: 0 170px;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -5,7 +5,11 @@ import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import LoginSignUp from "./pages/LoginSignUp";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import Footer from "./components/footer/Footer";
+import mens_banner from "./components/assets/banner_mens.png";
+import women_banner from "./components/assets/banner_women.png";
+import kids_banner from "./components/assets/banner_kids.png";
+import ShopCategory from "./pages/ShopCategory";
 function App() {
   return (
     <div>
@@ -13,15 +17,25 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Shop />} />
-          <Route path="/mens" element={<Shop category="mens" />} />
-          <Route path="/woman" element={<Shop category="women" />} />
-          <Route path="/kids" element={<Shop category="kids" />} />
+          <Route
+            path="/mens"
+            element={<ShopCategory banner={mens_banner} category="men" />}
+          />
+          <Route
+            path="/women"
+            element={<ShopCategory banner={women_banner} category="women" />}
+          />
+          <Route
+            path="/kids"
+            element={<ShopCategory banner={kids_banner} category="kid" />}
+          />
           <Route path="/product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignUp />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
