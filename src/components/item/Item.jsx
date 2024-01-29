@@ -2,11 +2,10 @@ import React from "react";
 import "./item.css";
 import { Link } from "react-router-dom";
 const Item = (props) => {
-  console.log(props);
   return (
     <div className="item">
       <Link to={`/product/${props.id}`}>
-        <img src={props.image} alt="" />
+        <img src={props.image} onClick={window.scroll(0, 0)} alt="" />
       </Link>
       <p>{props.name}</p>
       <div className="item-prices">
