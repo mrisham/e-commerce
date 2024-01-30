@@ -11,8 +11,10 @@ const getDefaultCart = () => {
 const ShopContextProvider = (props) => {
   const [cartItems, setcartItems] = useState(getDefaultCart());
   const addToCart = (itemId) => {
-    setcartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    console.log(cartItems);
+    setcartItems((prev) => {
+      const updatedCart = { ...prev, [itemId]: prev[itemId] + 1 };
+      return updatedCart;
+    });
   };
   const removeFromCart = (itemId) => {
     setcartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
